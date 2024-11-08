@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark bg-gradient mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)"
+      ><img style="width: 6em" src="hrisLogo.png" alt=""
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mynavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/home"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employees" routerLinkActive="active"
+            >Employees</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="active"
+            >Contacts</a
+          >
+        </li>
+      </ul>
+
+      <button class="btn btn-info" type="button" (click)="onLogOut()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

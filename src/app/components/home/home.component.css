@@ -1,0 +1,7 @@
+.myContainer {
+  width: 80em;
+  height: 40em;
+  background-color: rgb(255, 255, 255, 0.9);
+  border-radius: 40px;
+  opacity: 1;
+}

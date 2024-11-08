@@ -1,0 +1,66 @@
+<!-- <div class="row m-4">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div
+      class="card"
+      style="height: 25rem; overflow-y: auto; text-align: center"
+    >
+      <div class="card-header bg-info">Add Employee</div>
+      <div class="card-body">
+        <form #form="ngForm">
+          <div class="row">
+            <div class="col-12">
+              <label for="">Employee Name</label>
+              <input
+                type="text"
+                #personName="ngModel"
+                required
+                minlength="5"
+                name="employeeName"
+                [(ngModel)]="employeeObj.Name"
+                class="form-control"
+              />
+              @if (personName.touched) {
+              <div class="text-danger">
+                @if(personName?.errors?.['required']){
+                <span>Required</span>
+                } @if (personName?.errors?.['minlength']) {
+                <span>Min 5 Chars required</span>
+                }
+              </div>
+              }
+            </div>
+            <div class="col-12">
+              <label for="">Department</label>
+              <input
+                type="text"
+                [(ngModel)]="employeeObj.Department"
+                class="form-control"
+                name="departmentName"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Position</label>
+              <input
+                type="text"
+                [(ngModel)]="employeeObj.Position"
+                class="form-control"
+                name="positionName"
+              />
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-12 text-center mb-2 mt-2">
+              <button class="btn btn-info" (click)="onSaveEmployee()">
+                Save Client
+              </button>
+            </div>
+            <div class="col-12 text-center">
+              <button class="btn btn-secondary">Reset Client</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->

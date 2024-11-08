@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-2 m-auto">
+    <div
+      class="card"
+      style="height: 20rem; overflow-y: auto; text-align: center"
+    >
+      <div class="card-header bg-info">Add Employee</div>
+      <div class="card-body">
+        <form #form="ngForm">
+          <div class="row">
+            <div class="col-12">
+              <label for="ngForm">Employee Name</label>
+              <input
+                type="text"
+                #personName="ngModel"
+                name="employeeName"
+                [(ngModel)]="employeeObj.name"
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Department</label>
+              <input
+                type="text"
+                [(ngModel)]="employeeObj.department"
+                class="form-control"
+                name="departmentName"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Position</label>
+              <input
+                type="text"
+                [(ngModel)]="employeeObj.position"
+                class="form-control"
+                name="positionName"
+              />
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-4 text-center">
+              <button class="btn btn-info" (click)="onSaveEmployee()">
+                Save
+              </button>
+            </div>
+            <div class="col-4 text-center">
+              <button class="btn btn-info" (click)="onUpdateEmployee()">
+                Update
+              </button>
+            </div>
+            <div class="col-4 text-center">
+              <button class="btn btn-secondary" (click)="onClearEmployee()">
+                Clear
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <input
+      type="text"
+      class="form-control mt-4"
+      placeholder="Search"
+      onkeyup="onSearch(id)"
+    />
+  </div>
+  <!-- Employeelist -->
+  <div class="col-8 m-auto">
+    <div class="card" style="height: 40rem; overflow-y: auto">
+      <div
+        style="text-align: center; font-size: 24px"
+        class="card-header alert alert-info"
+      >
+        Employee List
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <table
+              class="table table-bordered table-hover table-striped table-light"
+            >
+              <thead class="table-info sticky-top">
+                <tr>
+                  <th>Id</th>
+                  <th>Employee Name</th>
+                  <th>Department</th>
+                  <th>Position</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                @for (item of employeeList; track $index) {
+                <tr>
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.department }}</td>
+                  <td>{{ item.position }}</td>
+                  <td>
+                    <div class="row">
+                      <div class="col-2"></div>
+                      <button
+                        class="btn btn-success col-4"
+                        (click)="onEdit(item)"
+                      >
+                        Update
+                      </button>
+
+                      <button
+                        class="btn btn-danger col-4"
+                        (click)="onDelete(item.id)"
+                      >
+                        Remove
+                      </button>
+                      <div class="col-2"></div>
+                    </div>
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
