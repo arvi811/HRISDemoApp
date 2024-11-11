@@ -26,7 +26,8 @@ export class EmployeeService {
 
   addEmployee(obj: IEmployee): Observable<IEmployee> {
     return this.http.post<IEmployee>(
-      environment.API_EMPLOYEE_URL + Constant.API_METHOD.GET_ALL_EMPLOYEES,
+      environment.API_EMPLOYEE_URL +
+        Constant.API_METHOD.GET_ALL_EMPLOYEES,
       obj
     );
   }
@@ -35,12 +36,12 @@ export class EmployeeService {
     return this.http.put<IEmployee>(
       environment.API_EMPLOYEE_URL +
         Constant.API_METHOD.GET_EMPLOYEE +
-        JSON.stringify(id),
+        id,
       obj
     );
   }
 
-  deletePokemonById(id: number): Observable<IEmployee> {
+  deleteEmployeeById(id: number): Observable<IEmployee> {
     return this.http.delete<IEmployee>(
       environment.API_EMPLOYEE_URL + Constant.API_METHOD.GET_EMPLOYEE + id
     );

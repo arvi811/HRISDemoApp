@@ -1,10 +1,13 @@
+<div *ngIf="isLoading">
+  <app-spinner></app-spinner>
+</div>
 <div class="row">
   <div class="col-2 m-auto">
     <div
       class="card"
-      style="height: 20rem; overflow-y: auto; text-align: center"
+      style="height: 24rem; overflow-y: auto; text-align: center"
     >
-      <div class="card-header bg-info">Add Employee</div>
+      <div class="card-header alert alert-info">Add Employee</div>
       <div class="card-body">
         <form #form="ngForm">
           <div class="row">
@@ -37,19 +40,19 @@
               />
             </div>
           </div>
-          <div class="row pt-2">
+          <div class="row pt-3">
             <div class="col-4 text-center">
-              <button class="btn btn-info" (click)="onSaveEmployee()">
+              <button class="alert alert-info" (click)="onSaveEmployee()">
                 Save
               </button>
             </div>
             <div class="col-4 text-center">
-              <button class="btn btn-info" (click)="onUpdateEmployee()">
+              <button class="alert alert-info" (click)="onUpdateEmployee()">
                 Update
               </button>
             </div>
             <div class="col-4 text-center">
-              <button class="btn btn-secondary" (click)="onClearEmployee()">
+              <button class="alert alert-info" (click)="onClearEmployee()">
                 Clear
               </button>
             </div>
@@ -79,7 +82,7 @@
             <table
               class="table table-bordered table-hover table-striped table-light"
             >
-              <thead class="table-info sticky-top">
+              <thead class="table-info">
                 <tr>
                   <th>Id</th>
                   <th>Employee Name</th>
